@@ -23,10 +23,12 @@ Items written using other formats must be rewritten before upgrading.
 
 THe ``Model`` class now includes public methods for serializing and deserializing its attributes.
 ``Model.serialize`` and ``Model.deserialize`` convert the model to/from a dictionary of DynamoDB attribute values.
+``Model.to_json`` and ``Model.from_json`` convert the model to/from a JSON-formatted string.
 
 Other changes in this release:
 
 * Python 2 is no longer supported. Python 3.6 or greater is now required.
+* JSON serialization support (``Model.to_json`` and ``Model.from_json``) has been added.
 * Table backup functionality (``Model.dump[s]`` and ``Model.load[s]``) has been removed.
 * ``Model.query`` no longer demotes invalid range key conditions to be filter conditions to avoid surprising behaviors:
   where what's intended to be a cheap and fast condition ends up being expensive and slow. Since filter conditions

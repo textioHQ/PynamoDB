@@ -810,7 +810,6 @@ class Model(AttributeContainer, metaclass=MetaModel):
                     raise
 
     # Private API below
-
     @classmethod
     def _get_schema(cls):
         """
