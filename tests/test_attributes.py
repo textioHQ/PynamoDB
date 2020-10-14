@@ -884,7 +884,7 @@ class TestDynamicMapAttribute:
 
     def test_serialize(self):
         test_model = TestDynamicMapAttribute.TestModel()
-        test_model.test_map.created_at = datetime(2017, 1, 1)
+        test_model.test_map.created_at = datetime(2017, 1, 1, tzinfo=timezone.utc)
         test_model.test_map.foo = 'bar'
         test_model.test_map.empty = None
         assert test_model.serialize() == {'test_map': {'M': {
@@ -901,7 +901,7 @@ class TestDynamicMapAttribute:
         }}}
         test_model = TestDynamicMapAttribute.TestModel()
         test_model.deserialize(serialized)
-        assert test_model.test_map.created_at == datetime(2017, 1, 1)
+        assert test_model.test_map.created_at == datetime(2017, 1, 1, tzinfo=timezone.utc)
         assert test_model.test_map.foo == 'bar'
         assert test_model.test_map.empty is None
 
