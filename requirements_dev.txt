@@ -1,0 +1,13 @@
+botocore~=1.22
+blinker~=1.4
+
+pytest>=6
+pytest-env
+pytest-mock
+
+awscli~=1.11
+
+# Textio private
+infrastructure-run-cloudformation~=0.9
+pypi-s3-upload~=1.1
+

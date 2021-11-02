@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+# Depends on stacks:
+# - pypi-s3 (implicit)
+
+
+Description: >
+  AWS dev environment resources
+
+
+Parameters:
+
+  CircleCiUserName:
+    Description: Name of the CircleCI user
+    Type: String
+
+
+Resources:
+
+  CircleCiUser:
+    Type: "AWS::IAM::User"
+    Properties:
+      UserName: !Ref CircleCiUserName
+      Groups:
+        - "pypi-read-machine"
+        - "pypi-write-machine"
+
+
+Outputs:
+
+  CircleCiUserName:
+    Description: "Name of the CircleCI user"
+    Value: !Ref CircleCiUser
+    Export:
+      Name: !Sub "${AWS::StackName}-CircleCiUserName"
+
+  CircleCiUserArn:
+    Description: "ARN of the CircleCI user"
+    Value: !GetAtt CircleCiUser.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-CircleCiUserArn"

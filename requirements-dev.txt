@@ -1,8 +1,0 @@
-pytest>=6
-pytest-env
-pytest-mock
-
-# only used in CI
-coveralls
-mypy==0.770;python_version>="3.7"
-pytest-cov
