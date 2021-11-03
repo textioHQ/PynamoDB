@@ -1,7 +1,7 @@
 .PHONY: help clean clean-all clean-assets upgrade-dev-deps upgrade-deps dev build test code	\
 	devinfra deploy release deploy-prod
 
-pkg := pynamodb
+pkg := textio-pynamodb
 codedir := $(shell echo $(pkg) | sed 's/-/_/'g)
 testdir := tests
 
