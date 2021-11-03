@@ -64,6 +64,7 @@ jobs:
   deploy-version:
     docker:
       - image: circleci/python:3.9.1
+      - image: amazon/dynamodb-local:latest
     steps:
       - checkout
       - restore_cache:
@@ -73,6 +74,7 @@ jobs:
   deploy-tag:
     docker:
       - image: circleci/python:3.9.1
+      - image: amazon/dynamodb-local:latest
     steps:
       - checkout
       - restore_cache:
