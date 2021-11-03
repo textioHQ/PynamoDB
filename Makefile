@@ -16,7 +16,7 @@ testfiles := $(shell find $(testdir) -name '*' -not \( -path '*__pycache__*' \))
 
 devinfra-cf := devinfra.yml
 devinfra-name := $(pkg)-devinfra
-devinfra-circleci-user := bot-circleci-syc
+devinfra-circleci-user := bot-circleci-pynamodb
 
 # Dev environment
 assume-role ?= textioaws assumerole --config $(config)
