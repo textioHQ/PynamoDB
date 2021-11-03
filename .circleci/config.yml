@@ -59,7 +59,6 @@ jobs:
           destination: test_results
       - store_test_results:
           path: ./test_results
-	  
 
   deploy-version:
     docker:
