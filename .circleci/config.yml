@@ -57,9 +57,9 @@ jobs:
       - store_artifacts:
           path: /tmp/pytest
           destination: test_results
-      - store_artifacts:
-          path: htmlcov
-          destination: coverage
+      - store_test_results:
+          path: ./test_results
+	  
 
   deploy-version:
     docker:
