@@ -7,7 +7,7 @@ install_requires = [
 ]
 
 setup(
-    name='pynamodb',
+    name='textio-pynamodb',
     version=__import__('pynamodb').__version__,
     packages=find_packages(exclude=('tests', 'tests.integration',)),
     url="https://github.com/textioHQ/pynamodb/",
